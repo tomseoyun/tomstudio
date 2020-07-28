@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>
+		tomstudio</title>
+<style>
+	.logo { display: block; margin: 0px auto; }
+	header {
+		height: 90px;
+		background-color : #77c2a5;
+	}
+</style>
+</head>
+<body bgcolor="#f4f4f6">
+	<!---헤더 시작-->
+	<header>
+		<img src='logo.png' class= "logo" width="204" height="45">
+	</header>
+
+	<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+	<script>
+const burst = new mojs.Burst({
+  left: 0, top: 0,
+  radius:   { 4: 19 },
+  angle:    45,
+  children: {
+    shape:        'line', 
+    radius:       3,
+    scale:        1,
+    stroke:       '#FD7932',
+    strokeDasharray: '100%',
+    strokeDashoffset: { '-100%' : '100%' },
+    duration:     700,
+    easing:       'quad.out',
+  }
+});
+
+document.addEventListener( 'click', function (e) {
+  burst
+    .tune({ x: e.pageX, y: e.pageY })
+    .replay();
+} );
+
+	</script>
+
+
+
+
+</body>
+</html>
